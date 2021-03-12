@@ -14,6 +14,8 @@ import com.viral.inventory.model.Product;
 import com.viral.inventory.model.SubCategory;
 import com.viral.inventory.service.IInboundService;
 
+import jdk.internal.org.jline.utils.Log;
+
 @Service
 public class InboundService implements IInboundService {
 
@@ -29,9 +31,13 @@ public class InboundService implements IInboundService {
 	@Override
 	public Product postProduct(Product products) {
 		Long catId = products.getCategory().getCatId();
+//		Log.info("catId : ",catId);
 		Long subCatId = products.getSubcategory().getSubCatId();
+//		Log.info("sub Cat Id : ",subCatId);
 		Optional<Category> category = iCategoryRepo.findById(catId);
+//		Log.info("category : ",category);
 		Optional<SubCategory> subCategory = isubCategoryRepo.findById(subCatId);
+//		Log.info("subCategory : ",subCategory);
 		products.setSubcategory(subCategory.get());
 		products.setCategory(category.get());
 		return inboundRepo.save(products);

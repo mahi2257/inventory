@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.viral.inventory.model.Product;
 import com.viral.inventory.service.IInboundService;
 
+import jdk.internal.org.jline.utils.Log;
+
 @RestController
 @RequestMapping("/inbound")
+
 public class InboundRestController {
 
 	@Autowired
@@ -20,6 +23,8 @@ public class InboundRestController {
 	
 	@PostMapping("/postProduct")
 	public Product postProduct(@RequestBody Product products) {
+//		Log.info("Product creation :: ",products);
+		System.out.println("Product is creating "+products);
 		return inboundService.postProduct(products);
 	}
 	

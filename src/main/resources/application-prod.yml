@@ -1,6 +1,6 @@
 
 server:
-  port: 8095
+  port: 8094
   servlet:
     context-path: /inventoryService/
     
@@ -8,23 +8,23 @@ spring:
   main:
     banner-mode: "off"
   profiles:
-    active:  prod # default : to run application.yml file    &&  prod : to run application-prod.yml file
+    active:  default # default : to run application.yml file    &&  prod : to run application-prod.yml file
   jpa:
-    database: mysql
+#    database: mysql
     show-sql: true
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
   datasource:
-#    type: org.apache.tomcat.jdbc.pool.DataSource
-    platform: mysql
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/inventory
-    username: root
-    password: root
+#   type: org.apache.tomcat.jdbc.pool.DataSource
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
+    url: postgres://jzbnmevcksrrnk:617121ca965cb784a22ab4287d8a77b31e9c356cdc21750422c757d8fcabdf77@ec2-54-164-22-242.compute-1.amazonaws.com:5432/dbt6mg40v0rjk4
+    username: jzbnmevcksrrnk
+    password: 617121ca965cb784a22ab4287d8a77b31e9c356cdc21750422c757d8fcabdf77
     initialization-mode: always
 #    data: classpath:sql-file/commonConfigData.sql
     tomcat:
