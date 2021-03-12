@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.viral.inventory.model.Product;
 import com.viral.inventory.service.IInboundService;
 
-import jdk.internal.org.jline.utils.Log;
 
 @RestController
 @RequestMapping("/inbound")

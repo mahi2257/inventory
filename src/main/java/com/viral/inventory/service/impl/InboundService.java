@@ -14,8 +14,6 @@ import com.viral.inventory.model.Product;
 import com.viral.inventory.model.SubCategory;
 import com.viral.inventory.service.IInboundService;
 
-import jdk.internal.org.jline.utils.Log;
-
 @Service
 public class InboundService implements IInboundService {
 
