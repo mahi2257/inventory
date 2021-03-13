@@ -15,7 +15,7 @@ public class SubCategory {
 	
 	@Id
 	@Column(name = "SUB_CAT_ID", columnDefinition = "INT")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long subCatId;
 	
 	@Column(name="NAME", unique = true)
