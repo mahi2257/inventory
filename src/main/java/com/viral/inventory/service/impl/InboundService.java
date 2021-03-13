@@ -14,7 +14,10 @@ import com.viral.inventory.model.Product;
 import com.viral.inventory.model.SubCategory;
 import com.viral.inventory.service.IInboundService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class InboundService implements IInboundService {
 
 	@Autowired
@@ -28,6 +31,7 @@ public class InboundService implements IInboundService {
 
 	@Override
 	public Product postProduct(Product products) {
+		log.info("New Product adding into inventory : ",products);
 		Long catId = products.getCategory().getCatId();
 //		Log.info("catId : ",catId);
 		Long subCatId = products.getSubcategory().getSubCatId();
@@ -48,6 +52,7 @@ public class InboundService implements IInboundService {
 	
 	@Override
 	public Category addNewCategory(Category category){
+		log.info("new category in service : "+category);
 		return iCategoryRepo.save(category);
 	}
 

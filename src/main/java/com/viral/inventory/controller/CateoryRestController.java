@@ -14,8 +14,11 @@ import com.viral.inventory.model.Category;
 import com.viral.inventory.model.SubCategory;
 import com.viral.inventory.service.impl.InboundService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping("category")
+@Slf4j
 public class CateoryRestController {
 	
 	@Autowired
@@ -23,6 +26,10 @@ public class CateoryRestController {
 	
 	@PostMapping("/newCategory")
 	public Category addNewCategory(@RequestBody Category newCategory) {
+		log.info("new Category rest controller ");
+		log.info("New Category cat Id : "+newCategory.getCatId());
+		log.info("New Category cat Name : "+newCategory.getCatName());
+		log.info("New Category cat status : "+newCategory.getCategoryStatus());
 		return inboundService.addNewCategory(newCategory);
 	}
 	

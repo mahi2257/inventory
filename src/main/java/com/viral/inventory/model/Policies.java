@@ -20,7 +20,7 @@ public class Policies implements Serializable{
 	
 	@Id
 	@Column(name = "POLICY_ID", columnDefinition = "INT")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long policyId;
 	
 	@Column(name = "CAN_RETURN")
