@@ -52,6 +52,7 @@ public class InboundService implements IInboundService {
 	
 	@Override
 	public Category addNewCategory(Category category){
+		log.info("category Id in service : "+category.getCatId());
 		log.info("new category in service : "+category);
 		return iCategoryRepo.save(category);
 	}
