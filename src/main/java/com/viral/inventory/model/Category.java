@@ -19,7 +19,7 @@ public class Category implements Serializable{
 	private static final long serialVersionUID = 704376194788484835L;
 
 	@Id
-	@Column(name = "CAT_ID", columnDefinition = "INT")
+	@Column(name = "CAT_ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long catId;
 	
