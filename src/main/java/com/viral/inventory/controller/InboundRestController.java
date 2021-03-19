@@ -14,7 +14,6 @@ import com.viral.inventory.service.IInboundService;
 
 @RestController
 @RequestMapping("/inbound")
-
 public class InboundRestController {
 
 	@Autowired

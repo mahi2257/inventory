@@ -10,6 +10,9 @@ spring:
   profiles:
     active:  default # default : to run application.yml file    &&  prod : to run application-prod.yml file
   jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 #    database: mysql
     show-sql: true
 #    database-platform: org.hibernate.dialect.MySQL8Dialect
@@ -27,6 +30,7 @@ spring:
     password: 617121ca965cb784a22ab4287d8a77b31e9c356cdc21750422c757d8fcabdf77
     initialization-mode: always
 #    data: classpath:sql-file/commonConfigData.sql
+
     tomcat:
       initial-size: 10
       max-wait: 300000
