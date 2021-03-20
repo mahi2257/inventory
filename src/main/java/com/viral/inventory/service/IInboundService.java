@@ -19,7 +19,7 @@ public interface IInboundService {
 	
 	public List<Category> getCategories();
 	
-	public List<SubCategory> getSubCategorysByCategory(Long catId);
+	public SubCategory getSubCategorysByCategory(Long catId);
 	
 	public SubCategory addNewSubCategory(SubCategory subCategory);
 	

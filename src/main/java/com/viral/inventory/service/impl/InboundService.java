@@ -63,8 +63,12 @@ public class InboundService implements IInboundService {
 	}
 
 	@Override
-	public List<SubCategory> getSubCategorysByCategory(Long catId) {
-		return isubCategoryRepo.findByCatId(catId);
+	public SubCategory getSubCategorysByCategory(Long catId) {
+		Optional<SubCategory> subCategory = isubCategoryRepo.findById(catId);
+		if(subCategory.isPresent()) {
+			return subCategory.get();
+		}
+		return null;
 	}
 	
 	@Override
