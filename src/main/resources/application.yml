@@ -7,7 +7,7 @@ spring:
   main:
     banner-mode: "off"
   profiles:
-    active:  prod # default : to run application.yml file    &&  prod : to run application-prod.yml file
+    active:  default # default : to run application.yml file    &&  prod : to run application-prod.yml file
   jpa:
     database: mysql
     show-sql: true

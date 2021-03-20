@@ -33,7 +33,7 @@ public class CateoryRestController {
 		return inboundService.addNewCategory(newCategory);
 	}
 	
-	@GetMapping("/category")
+	@GetMapping("/findAllCategories")
 	public List<Category> getCategories(){
 		return inboundService.getCategories();
 	}

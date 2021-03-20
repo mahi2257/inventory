@@ -31,15 +31,15 @@ public class InboundService implements IInboundService {
 
 	@Override
 	public Product postProduct(Product products) {
-		log.info("New Product adding into inventory : ",products);
+		log.info("New Product adding into inventory : "+products);
 		Long catId = products.getCategory().getCatId();
-//		Log.info("catId : ",catId);
+		log.info("New Product adding into inventory : catId : "+catId);
 		Long subCatId = products.getSubcategory().getSubCatId();
-//		Log.info("sub Cat Id : ",subCatId);
+		log.info("New Product adding into inventory : subCatId : "+subCatId);
 		Optional<Category> category = iCategoryRepo.findById(catId);
-//		Log.info("category : ",category);
+		log.info("New Product adding into inventory : category Optional : "+category);
 		Optional<SubCategory> subCategory = isubCategoryRepo.findById(subCatId);
-//		Log.info("subCategory : ",subCategory);
+		log.info("New Product adding into inventory : subCategory Optional : "+subCategory);
 		products.setSubcategory(subCategory.get());
 		products.setCategory(category.get());
 		return inboundRepo.save(products);

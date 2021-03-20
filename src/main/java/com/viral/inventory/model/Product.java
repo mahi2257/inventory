@@ -11,8 +11,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 @Entity
 @Table(name = "product")
+@Setter
+@Getter
+@ToString
 public class Product implements Serializable {
 
 	/**
@@ -80,144 +87,5 @@ public class Product implements Serializable {
 	@JoinColumn(name = "SUB_CAT_ID_FK")
 	private SubCategory subcategory;
 
-	public Long getProdId() {
-		return prodId;
-	}
-
-	public void setProdId(Long prodId) {
-		this.prodId = prodId;
-	}
-
-	public String getProdName() {
-		return prodName;
-	}
-
-	public void setProdName(String prodName) {
-		this.prodName = prodName;
-	}
-
-	public String getBrand() {
-		return brand;
-	}
-
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
-
-	public String getModel() {
-		return model;
-	}
-
-	public void setModel(String model) {
-		this.model = model;
-	}
-
-	public float getMarketPrice() {
-		return marketPrice;
-	}
-
-	public void setMarketPrice(float marketPrice) {
-		this.marketPrice = marketPrice;
-	}
-
-	public float getDisPrice() {
-		return disPrice;
-	}
-
-	public void setDisPrice(float disPrice) {
-		this.disPrice = disPrice;
-	}
-
-	public int getProductQuantity() {
-		return productQuantity;
-	}
-
-	public void setProductQuantity(int productQuantity) {
-		this.productQuantity = productQuantity;
-	}
-
-	public String getMerchant() {
-		return merchant;
-	}
-
-	public void setMerchant(String merchant) {
-		this.merchant = merchant;
-	}
-
-	public SubCategory getSubcategory() {
-		return subcategory;
-	}
-
-	public void setSubcategory(SubCategory subcategory) {
-		this.subcategory = subcategory;
-	}
-
-	public String getProductSpecification() {
-		return productSpecification;
-	}
-
-	public void setProductSpecification(String productSpecification) {
-		this.productSpecification = productSpecification;
-	}
-
-	public Policies getPolicies() {
-		return policies;
-	}
-
-	public void setPolicies(Policies policies) {
-		this.policies = policies;
-	}
-	
-	public float getSell_Price() {
-		return sell_Price;
-	}
-
-	public void setSell_Price(float sell_Price) {
-		this.sell_Price = sell_Price;
-	}
-
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
-
-
-	public String getService() {
-		return service;
-	}
-
-	public void setService(String service) {
-		this.service = service;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getPurpose() {
-		return purpose;
-	}
-
-	public void setPurpose(String purpose) {
-		this.purpose = purpose;
-	}
-
-	public String getRegional() {
-		return regional;
-	}
-
-	public void setRegional(String regional) {
-		this.regional = regional;
-	}
-	
-	
-	
 	
 }
