@@ -44,7 +44,7 @@ public class CateoryRestController {
 	}
 	
 	@GetMapping("/subCategoryByCatName/{catId}")
-	public List<SubCategory> getSubCategorysByCatName(@PathVariable Long catId){
+	public SubCategory getSubCategorysByCatName(@PathVariable Long catId){
 		return inboundService.getSubCategorysByCategory(catId);
 	}
 	
