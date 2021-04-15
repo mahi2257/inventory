@@ -1,4 +1,4 @@
-package com.viral.inventory.utils;
+package com.viral.inventory.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

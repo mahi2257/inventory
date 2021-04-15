@@ -1,6 +1,5 @@
 package com.viral.inventory.service.impl;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +15,8 @@ import com.viral.inventory.service.IInboundService;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Service
 @Slf4j
+@Service
 public class InboundService implements IInboundService {
 
 	@Autowired
@@ -44,47 +43,5 @@ public class InboundService implements IInboundService {
 		products.setCategory(category.get());
 		return inboundRepo.save(products);
 	}
-
-	@Override
-	public List<Product> getProductsByBrandAndModel(String brand, String model) {
-		return inboundRepo.getProductsByBrandAndModel(brand, model);
-	}
-	
-	@Override
-	public Category addNewCategory(Category category){
-		log.info("category Id in service : "+category.getCatId());
-		log.info("new category in service : "+category);
-		return iCategoryRepo.save(category);
-	}
-
-	@Override
-	public List<Category> getCategories() {
-		return null;
-	}
-
-	@Override
-	public SubCategory getSubCategorysByCategory(Long catId) {
-		Optional<SubCategory> subCategory = isubCategoryRepo.findById(catId);
-		if(subCategory.isPresent()) {
-			return subCategory.get();
-		}
-		return null;
-	}
-	
-	@Override
-	public SubCategory addNewSubCategory(SubCategory subCategory) {
-		return isubCategoryRepo.save(subCategory);
-	}
-
-	@Override
-	public void getVendorInvoice() {
-
-	}
-
-	@Override
-	public void getGRN() {
-
-	}
-
 
 }
